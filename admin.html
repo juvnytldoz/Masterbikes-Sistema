@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador - Masterbikes</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/supabase.js" defer></script>  <!-- Conexión con Supabase -->
+    <script src="js/admin.js" defer></script>     <!-- Funcionalidad para Admin -->
+</head>
+<body>
+    <!-- Header / Barra de navegación -->
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html">Inicio</a></li>
+                <li><a href="usuarios.html">Usuarios</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="proveedores.html">Proveedores</a></li>
+                <li><a href="login.html" id="logout">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección principal -->
+    <main>
+        <section id="gestion-productos">
+            <h2>Gestión de Productos</h2>
+            <button id="verProductosBtn">Ver Stock de Productos</button>
+            <div id="productos-lista"></div>
+            <button id="agregarProductoBtn">Ingresar Nuevo Producto</button>
+        </section>
+
+        <section id="gestion-proveedores">
+            <h2>Lista de Proveedores</h2>
+            <button id="verProveedoresBtn">Ver Proveedores</button>
+            <div id="proveedores-lista"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Masterbikes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

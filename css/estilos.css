@@ -1,0 +1,148 @@
+/* RESET básico para mejorar compatibilidad entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
+}
+
+/* Encabezado */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #00509e;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: #003366;
+}
+
+/* Main content area */
+main {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+main h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+/* Secciones */
+section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #00509e;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+section button:hover {
+    background-color: #003366;
+}
+
+/* Listas de productos y proveedores */
+#productos-lista, #proveedores-lista {
+    margin-top: 20px;
+}
+
+.producto, .proveedor {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.producto p, .proveedor p {
+    margin: 5px 0;
+}
+
+.producto button, .proveedor button {
+    margin-top: 10px;
+    background-color: #003366;
+}
+
+.producto button:hover, .proveedor button:hover {
+    background-color: #00509e;
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Responsivo: Mejorar la visualización en dispositivos pequeños */
+@media screen and (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section button {
+        padding: 8px 16px;
+    }
+}
