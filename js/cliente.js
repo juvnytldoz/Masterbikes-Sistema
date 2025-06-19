@@ -3,23 +3,17 @@
 // 🧪 DATOS SIMULADOS - SOLO PARA PROTOTIPO
 // ✳️ Esto es solo un ejemplo local y debe ser reemplazado por datos reales desde Supabase más adelante.
 const productos = [
+  // Bicicletas
   {
     id: 1,
     nombre: "Bicicleta Montaña Pro",
     precio: 189990,
     tipo: "bicicleta",
     categoria: "montaña",
-    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png" // ✳️ Aquí debes poner la URL real de la imagen del producto
-  },
-  {
-    id: 2,
-    nombre: "Casco de Seguridad",
-    precio: 24990,
-    tipo: "accesorio",
     imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
   },
   {
-    id: 3,
+    id: 2,
     nombre: "Bicicleta Urbana",
     precio: 159990,
     tipo: "bicicleta",
@@ -27,14 +21,143 @@ const productos = [
     imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
   },
   {
+    id: 3,
+    nombre: "Bicicleta Ruta Rápida",
+    precio: 209990,
+    tipo: "bicicleta",
+    categoria: "ruta",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
     id: 4,
+    nombre: "Bicicleta Eléctrica Compacta",
+    precio: 329990,
+    tipo: "bicicleta",
+    categoria: "eléctrica",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 5,
+    nombre: "Bicicleta Plegable Urbana",
+    precio: 179990,
+    tipo: "bicicleta",
+    categoria: "urbana",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 6,
+    nombre: "Bicicleta Infantil Rosa",
+    precio: 99990,
+    tipo: "bicicleta",
+    categoria: "infantil",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 7,
+    nombre: "Bicicleta BMX Acrobática",
+    precio: 144990,
+    tipo: "bicicleta",
+    categoria: "bmx",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 8,
+    nombre: "Bicicleta de Carga Familiar",
+    precio: 389990,
+    tipo: "bicicleta",
+    categoria: "cargo",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 9,
+    nombre: "Bicicleta Vintage Clásica",
+    precio: 199990,
+    tipo: "bicicleta",
+    categoria: "urbana",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 10,
+    nombre: "Bicicleta Montaña Carbono X",
+    precio: 499990,
+    tipo: "bicicleta",
+    categoria: "montaña",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+
+  // Accesorios
+  {
+    id: 11,
+    nombre: "Casco de Seguridad Negro",
+    precio: 24990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 12,
     nombre: "Guantes Antideslizantes",
     precio: 12990,
     tipo: "accesorio",
     imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 13,
+    nombre: "Luces LED Recargables",
+    precio: 18990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 14,
+    nombre: "Candado Acero Reforzado",
+    precio: 15990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 15,
+    nombre: "Timbre Clásico Cromado",
+    precio: 4990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 16,
+    nombre: "Bolso Porta Herramientas",
+    precio: 8990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 17,
+    nombre: "Botella Deportiva 600ml",
+    precio: 6990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 18,
+    nombre: "Espejo Retrovisor Manillar",
+    precio: 10990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 19,
+    nombre: "Inflador Manual Compacto",
+    precio: 14990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
+  },
+  {
+    id: 20,
+    nombre: "Parrilla Trasera Universal",
+    precio: 22990,
+    tipo: "accesorio",
+    imagen: "https://img.icons8.com/ios-filled/100/bicycle.png"
   }
-  // ✳️ Puedes seguir agregando más productos simulados aquí
 ];
+
 
 let carrito = [];
 
@@ -82,13 +205,19 @@ modalCerrar.onclick = () => {
 // Sidebar carrito
 const carritoBtn = document.getElementById("carrito-btn");
 const carritoSidebar = document.getElementById("carrito-sidebar");
+const cerrarSidebar = document.getElementById("cerrar-sidebar"); // ← Nuevo botón de cerrar
+
+carritoBtn.onclick = () => {
+  carritoSidebar.classList.remove("oculto");
+};
+
+cerrarSidebar.onclick = () => {
+  carritoSidebar.classList.add("oculto");
+};
+
 const listaCarrito = document.getElementById("lista-carrito");
 const carritoTotal = document.getElementById("carrito-total");
 const vaciarBtn = document.getElementById("vaciar-carrito");
-
-carritoBtn.onclick = () => {
-  carritoSidebar.classList.toggle("oculto");
-};
 
 vaciarBtn.onclick = () => {
   carrito = [];
