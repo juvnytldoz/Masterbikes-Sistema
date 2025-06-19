@@ -1,3 +1,7 @@
+/* ============================ */
+/* CSS DE admin.html           */
+/* ============================ */
+
 /* RESET básico para mejorar compatibilidad entre navegadores */
 * {
     margin: 0;
@@ -145,4 +149,53 @@ footer {
     section button {
         padding: 8px 16px;
     }
+}
+
+/* ============================ */
+/* CSS DE login.html           */
+/* ============================ */
+
+.login-container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+}
+
+.login-container h1 {
+    margin-bottom: 1.5rem;
+    color: #003366;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007BFF;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #0056b3;
+}
+
+.error-msg {
+    color: red;
+    margin-top: 1rem;
 }
