@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Masterbikes - Tienda</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="header-tienda">
+    <h1 class="logo">Masterbikes</h1>
+    <div class="iconos-header">
+      <a href="login.html" title="Ir al login">
+        <img src="https://img.icons8.com/ios-glyphs/30/user--v1.png" alt="Usuario">
+      </a>
+      <button id="carrito-btn" title="Ver carrito">
+        <img src="https://img.icons8.com/ios-glyphs/30/shopping-cart.png" alt="Carrito">
+      </button>
+    </div>
+  </header>
+
+  <main id="productos-grid"></main>
+
+  <!-- Modal de detalle del producto -->
+  <div id="modal-producto" class="modal oculto">
+    <div class="modal-contenido">
+      <span id="modal-cerrar" class="cerrar">&times;</span>
+      <img id="modal-img" src="" alt="Imagen producto" />
+      <h2 id="modal-nombre"></h2>
+      <p id="modal-precio"></p>
+      <button id="modal-agregar">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!-- Sidebar del carrito -->
+  <aside id="carrito-sidebar" class="sidebar oculto">
+    <div class="sidebar-contenido">
+      <h2>Tu carrito</h2>
+      <ul id="lista-carrito"></ul>
+      <p id="carrito-total">Total: $0</p>
+      <button id="vaciar-carrito">Vaciar carrito</button>
+      <!-- ✳️ Aquí podrías agregar en el futuro un botón para "Realizar compra" -->
+    </div>
+  </aside>
+
+  <script type="module" src="js/cliente.js"></script>
+</body>
+</html>
