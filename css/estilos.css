@@ -201,7 +201,7 @@ footer {
 }
 
 /* ============================ */
-/* CSS DE cliente.html (Diseño Moderno Mejorado) */
+/* CSS DE cliente.html         */
 /* ============================ */
 
 /* RESET básico */
@@ -238,6 +238,31 @@ body {
   letter-spacing: 1px;
 }
 
+/* INFO DE USUARIO */
+.header-tienda .user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.header-tienda .user-info strong {
+  color: #2e7d32;
+}
+
+.header-tienda .user-info a {
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 500;
+  transition: text-decoration 0.2s;
+}
+
+.header-tienda .user-info a:hover {
+  text-decoration: underline;
+}
+
+/* ICONOS (login y carrito) */
 .iconos-header {
   display: flex;
   gap: 20px;
@@ -321,7 +346,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 200;
+  z-index: 300; /* Elevado para aparecer sobre el sidebar */
+}
+
+.modal.oculto {
+  display: none;
 }
 
 .modal-contenido {
@@ -337,6 +366,62 @@ body {
   width: 120px;
   height: 120px;
   margin-bottom: 20px;
+}
+
+.modal-contenido h2 {
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.modal-contenido p {
+  margin-bottom: 18px;
+  font-size: 1rem;
+}
+
+.modal-contenido button {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.modal-contenido button:hover {
+  background-color: #1b5e20;
+}
+
+.modal-contenido form label {
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.modal-contenido form label input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+.checkout-step h3 {
+  margin-bottom: 12px;
+  color: #003366;
+}
+
+#checkout-message {
+  margin-top: 20px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+#checkout-message.success {
+  color: #2e7d32;
+}
+
+#checkout-message.error {
+  color: #d32f2f;
 }
 
 .cerrar {
@@ -405,13 +490,37 @@ body {
   background-color: #1b5e20;
 }
 
+/* Checkout modal aún más arriba */
+#modal-checkout {
+  z-index: 302;
+}
+
 /* UTILIDAD */
 .oculto {
   display: none;
 }
 
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .header-tienda {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #productos-grid {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .sidebar {
+    width: 100%;
+  }
+}
+
+
+
+
+
 /* ============================ */
-/* CSS DE cliente.html (Diseño Moderno Mejorado) */
+/* CSS DE empleado.html */
 /* ============================ */
 * {
             margin: 0;

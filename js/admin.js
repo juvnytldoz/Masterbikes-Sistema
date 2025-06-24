@@ -7,8 +7,9 @@ function checkAuth() {
 
 // Simular cierre de sesión
 function logout() {
-    alert("Sesión cerrada (simulada).");
-    window.location.href = 'login.html';
+    alert("Sesión cerrada.");
+    // Redirige a la ruta absoluta de cliente.html en tu PC
+    window.location.href = 'cliente.html';
 }
 
 // Formateador de moneda chilena
@@ -119,14 +120,15 @@ document.getElementById('verProveedoresBtn').addEventListener('click', fetchProv
 // Verificación de autenticación al cargar la página
 checkAuth();
 
-// Cerrar sesión
-document.getElementById('logout').addEventListener('click', logout);
+// Asignar el listener de cerrar sesión
+document.getElementById('logout').addEventListener('click', function(e) {
+    e.preventDefault();
+    logout();
+});
 
 // Botón para agregar proveedor
 const botonAgregarProveedor = document.createElement('button');
 botonAgregarProveedor.textContent = "Agregar Nuevo Proveedor";
 botonAgregarProveedor.style.marginLeft = "10px";
 botonAgregarProveedor.addEventListener('click', agregarProveedor);
-
-// Insertar el botón junto al de ver proveedores
 document.getElementById('verProveedoresBtn').after(botonAgregarProveedor);

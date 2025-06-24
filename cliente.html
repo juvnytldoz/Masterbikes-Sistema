@@ -9,6 +9,7 @@
 <body>
   <header class="header-tienda">
     <h1 class="logo">Masterbikes</h1>
+    <div class="user-info" id="user-info"></div>
     <div class="iconos-header">
       <a href="login.html" title="Ir al login">
         <img src="https://img.icons8.com/ios-glyphs/30/user--v1.png" alt="Usuario" />
@@ -19,11 +20,9 @@
     </div>
   </header>
 
-  <main id="productos-grid">
-    <!-- Tarjetas de productos generadas dinámicamente -->
-  </main>
+  <main id="productos-grid"></main>
 
-  <!-- Modal de detalle del producto -->
+  <!-- Modal producto -->
   <div id="modal-producto" class="modal oculto">
     <div class="modal-contenido">
       <span id="modal-cerrar" class="cerrar">&times;</span>
@@ -34,7 +33,7 @@
     </div>
   </div>
 
-  <!-- Sidebar del carrito -->
+  <!-- Sidebar carrito -->
   <aside id="carrito-sidebar" class="sidebar oculto">
     <div class="sidebar-contenido">
       <span id="cerrar-sidebar" class="cerrar">&times;</span>
@@ -42,9 +41,66 @@
       <ul id="lista-carrito"></ul>
       <p id="carrito-total">Total: $0</p>
       <button id="vaciar-carrito">Vaciar carrito</button>
+      <button id="checkout-btn">Realizar compra</button>
     </div>
   </aside>
 
-  <script type="module" src="js/cliente.js"></script>
+  <!-- Modal checkout -->
+  <div id="modal-checkout" class="modal oculto">
+    <div class="modal-contenido">
+      <span id="checkout-cerrar" class="cerrar">&times;</span>
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <!-- Paso 1 -->
+        <div class="checkout-step" data-step="1">
+          <h3>Datos de contacto</h3>
+          <label>Nombre completo
+            <input type="text" id="contact-name" required />
+          </label>
+          <label>Teléfono
+            <input type="text" id="contact-phone" required />
+          </label>
+          <label>Email
+            <input type="email" id="contact-email" required />
+          </label>
+          <button type="button" id="next-to-address">Siguiente</button>
+        </div>
+        <!-- Paso 2 -->
+        <div class="checkout-step oculto" data-step="2">
+          <h3>Dirección de envío</h3>
+          <label>Calle y número
+            <input type="text" id="ship-street" required />
+          </label>
+          <label>Ciudad
+            <input type="text" id="ship-city" required />
+          </label>
+          <label>Código postal
+            <input type="text" id="ship-zip" required />
+          </label>
+          <button type="button" id="back-to-contact">Atrás</button>
+          <button type="button" id="next-to-payment">Siguiente</button>
+        </div>
+        <!-- Paso 3 -->
+        <div class="checkout-step oculto" data-step="3">
+          <h3>Pago</h3>
+          <label>Número de tarjeta
+            <input type="text" id="card-number" maxlength="19" required />
+          </label>
+          <label>Fecha expiración (MM/YY)
+            <input type="text" id="card-expiry" maxlength="5" required />
+          </label>
+          <label>CVV
+            <input type="text" id="card-cvv" maxlength="3" required />
+          </label>
+          <button type="button" id="back-to-address">Atrás</button>
+          <button type="submit" id="complete-checkout">Pagar</button>
+        </div>
+      </form>
+      <div id="checkout-message" class="oculto"></div>
+    </div>
+  </div>
+
+  <!-- Aquí cargamos el JS con defer -->
+  <script src="js/cliente.js" defer></script>
 </body>
 </html>

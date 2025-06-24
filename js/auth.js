@@ -69,3 +69,12 @@ loginForm.addEventListener('submit', async (e) => {
       errorMsg.textContent = 'Rol desconocido. Contacta con soporte.';
   }
 });
+
+// … el código actual de autenticación …
+
+// Redirigir “Volver al inicio”
+document.getElementById('volver-inicio').addEventListener('click', e => {
+  e.preventDefault();
+  window.location.href = 'cliente.html';
+});
+
