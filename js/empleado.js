@@ -1,4 +1,41 @@
 // Datos de ejemplo (estos vendrían de tu base de datos)
+// — MODO DEBUG: ponlo en true para saltarte el login y poder editar rápido —
+const DEBUG_MODE = true;
+
+// — Para uso futuro con Supabase —
+// import { supabase } from './supabase.js';
+
+if (!DEBUG_MODE) {
+  // 1) Validar sesión y rol solo si no estamos en DEBUG
+  const sesion = JSON.parse(localStorage.getItem('sesion'));
+  if (!sesion || sesion.rol !== 'empleado') {
+    window.location.href = 'login.html';
+  }
+
+  // 2) Mostrar email/nombre del empleado en el header
+  const employeeNameEl = document.getElementById('employee-name');
+  if (employeeNameEl && sesion.email) {
+    employeeNameEl.textContent = sesion.email;
+  }
+}
+
+// 3) Definir logout() para el botón inline (funciona siempre)
+function logout() {
+  localStorage.removeItem('sesion');
+  window.location.href = 'cliente.html';
+}
+window.logout = logout;
+
+// 4) Función para cambiar de pestaña (siempre disponible)
+function showTab(tabId) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.querySelectorAll('.content-panel').forEach(panel => panel.classList.remove('active'));
+
+  document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+  document.getElementById(`${tabId}-panel`).classList.add('active');
+}
+window.showTab = showTab;
+
         let ordersData = [
             {
                 id: 'ORD-001',
@@ -393,7 +430,7 @@
         function logout() {
             if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
                 // Aquí rediriges a tu página de login
-                window.location.href = 'login.html';
+                window.location.href = 'cliente.html';
             }
         }
 
